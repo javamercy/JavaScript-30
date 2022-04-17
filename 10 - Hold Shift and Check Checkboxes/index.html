@@ -47,6 +47,7 @@
         font-size: 20px;
         font-weight: 200;
         border-left: 1px solid #d1e2ff;
+        cursor: pointer;
       }
     </style>
     <!--
@@ -122,7 +123,8 @@
       });
 
       function checkByLabel() {
-        this.previousElementSibling.checked = true;
+        this.previousElementSibling.checked =
+          !this.previousElementSibling.checked;
       }
 
       labels.forEach((label) => {
