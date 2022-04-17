@@ -96,6 +96,7 @@
 
     <script>
       const checkboxes = document.querySelectorAll("input[type='checkbox']");
+      const labels = document.querySelectorAll("label");
       let lastChecked = null;
 
       function checkAll(e) {
@@ -118,6 +119,14 @@
 
       checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("click", checkAll);
+      });
+
+      function checkByLabel() {
+        this.previousElementSibling.checked = true;
+      }
+
+      labels.forEach((label) => {
+        label.addEventListener("click", checkByLabel);
       });
     </script>
   </body>
