@@ -1,7 +1,7 @@
 /* Get Our Elements */
 const player = document.querySelector(".player");
 const video = player.querySelector(".viewer");
-const progres = player.querySelector(".progress");
+const progress = player.querySelector(".progress");
 const progressBar = player.querySelector(".progress__filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll(["[data-skip]"]);
@@ -33,7 +33,7 @@ function handleProgress() {
 }
 
 function scrub(e) {
-  const scrubTime = (e.offsetX / progres.offsetWidth) * video.duration;
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
   video.currentTime = scrubTime;
 }
 
@@ -54,7 +54,7 @@ ranges.forEach((range) =>
 
 let mousedownHolding = false;
 
-progres.addEventListener("click", scrub);
-progres.addEventListener("mousemove", (e) => mousedownHolding && scrub(e));
-progres.addEventListener("mousedown", () => (mousedownHolding = true));
-progres.addEventListener("mouseup", () => (mousedownHolding = false));
+progress.addEventListener("click", scrub);
+progress.addEventListener("mousemove", (e) => mousedownHolding && scrub(e));
+progress.addEventListener("mousedown", () => (mousedownHolding = true));
+progress.addEventListener("mouseup", () => (mousedownHolding = false));
